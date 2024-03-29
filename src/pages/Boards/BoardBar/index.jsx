@@ -89,9 +89,38 @@ function BoardBar() {
               height: "34px",
               fontSize: "16px",
               border: "none",
+              color: "white",
+              cursor: "pointer",
+              "&:fist-of-type": {
+                bgcolor: "#a4b0be",
+              },
             },
           }}
         >
+          <Tooltip title="Cristiano Ronaldo">
+            <Avatar
+              alt="Cristiano Ronaldo"
+              src="https://upload.wikimedia.org/wikipedia/commons/8/8c/Cristiano_Ronaldo_2018.jpg"
+            />
+          </Tooltip>
+          <Tooltip title="Lee Yeon-hee">
+            <Avatar
+              alt="Lee Yeon-hee"
+              src="https://phunuso.mediacdn.vn/thumb_w/640/603486343963435008/2023/8/28/lee-yeonhee-1693204420452909006363.jpg"
+            />
+          </Tooltip>
+          <Tooltip title="Rose">
+            <Avatar
+              alt="Rose"
+              src="https://media.baoquangninh.vn/upload/image/202307/medium/2100199_5fc049b4e26927b1f8e9720acdec299c.jpg"
+            />
+          </Tooltip>
+          <Tooltip title="Son Ye-jin">
+            <Avatar
+              alt="Son Ye-jin"
+              src="https://media.vov.vn/sites/default/files/styles/large/public/2021-06/247a122a-8e00-4e46-baa7-6839fbabc297_screen_shot_2020-08-26_at_3.34.32_pm.png.jpeg"
+            />
+          </Tooltip>
           <Tooltip title="KimCuongDev">
             <Avatar
               alt="KimCuongDev"
