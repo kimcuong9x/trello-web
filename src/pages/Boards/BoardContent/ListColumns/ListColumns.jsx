@@ -1,9 +1,9 @@
 import {Box} from "@mui/material";
-import Columns from "./Columns/Columns";
+import Column from "./Column/Column";
 import Button from "@mui/material/Button";
 import NoteAddIcon from "@mui/icons-material/NoteAdd";
 
-function ListColumns() {
+function ListColumns({columns}) {
   return (
     <Box
       sx={{
@@ -18,9 +18,9 @@ function ListColumns() {
         },
       }}
     >
-      <Columns />
-      <Columns />
-
+      {columns?.map((column) => (
+        <Column key={column._id} column={column} />
+      ))}
       <Box
         sx={{
           minWidth: "200px",

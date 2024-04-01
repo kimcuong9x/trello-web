@@ -9,8 +9,9 @@ import Avatar from "@mui/material/Avatar";
 import AvatarGroup from "@mui/material/AvatarGroup";
 import {Box, Button, Tooltip} from "@mui/material";
 import PersonAddIcon from "@mui/icons-material/PersonAdd";
+import {capitalizeFirstLetter} from "~/utils/formatters";
 
-function BoardBar() {
+function BoardBar({board}) {
   const MENU_STYLES = {
     color: "white",
     backgroundColor: "transparent",
@@ -43,13 +44,13 @@ function BoardBar() {
         <Chip
           sx={MENU_STYLES}
           icon={<DashboardIcon />}
-          label="KimCuongDev Mern Stack"
+          label={board?.title}
           onClick
         />
         <Chip
           sx={MENU_STYLES}
           icon={<VpnLockIcon />}
-          label="Public/Private Workspaces"
+          label={capitalizeFirstLetter(board?.type)}
           onClick
         />
         <Chip
