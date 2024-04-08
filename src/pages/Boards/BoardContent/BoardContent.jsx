@@ -306,7 +306,7 @@ function BoardContent({board}) {
   // args = argument = các đối số, tham số
   const collisionDetectionStrategy = useCallback(
     (args) => {
-      if (activeDragItemData === ACTIVE_DRAG_ITEM_TYPE.COLUMN) {
+      if (activeDragItemType === ACTIVE_DRAG_ITEM_TYPE.COLUMN) {
         return closestCorners({...args});
       }
 
@@ -346,7 +346,7 @@ function BoardContent({board}) {
 
       return lastOverId.current ? [{id: lastOverId.current}] : [];
     },
-    [activeDragItemData, orderedColumns]
+    [activeDragItemType, orderedColumns]
   );
 
   return (
