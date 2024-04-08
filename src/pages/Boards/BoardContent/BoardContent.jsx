@@ -18,7 +18,7 @@ import {arrayMove} from "@dnd-kit/sortable";
 import Column from "./ListColumns/Column/Column";
 import Card from "./ListColumns/Column/ListCards/Card/Card";
 import {cloneDeep, isEmpty} from "lodash";
-// import {generatePlaceholderCard} from "~/utils/formatters";
+import {generatePlaceholderCard} from "~/utils/formatters";
 
 const ACTIVE_DRAG_ITEM_TYPE = {
   COLUMN: "ACTIVE_DRAG_ITEM_TYPE_COLUMN",
@@ -106,10 +106,9 @@ function BoardContent({board}) {
         );
 
         // Thêm Placeholder vào card rông
-        // if (isEmpty(nextActiveColumn.cards)) {
-        //   console.log("aaaafirst");
-        //   nextActiveColumn.cards = [generatePlaceholderCard(nextActiveColumn)];
-        // }
+        if (isEmpty(nextActiveColumn.cards)) {
+          nextActiveColumn.cards = [generatePlaceholderCard(nextActiveColumn)];
+        }
 
         // cập nhập lại mang ở cardOrderId
         nextActiveColumn.cardOrderIds = nextActiveColumn.cards.map(
@@ -136,8 +135,8 @@ function BoardContent({board}) {
           rebuild_activeDraggingCardData
         );
 
-        // Xóa Placeholder của card 
-        // nextOverColumn.cards = nextOverColumn.cards.filter(card => !card.FE_PlaceholderCard)
+        // Xóa Placeholder của card
+        nextOverColumn.cards = nextOverColumn.cards.filter(card => !card.FE_PlaceholderCard)
 
         // Cập nhập lại mảng cardOrderId
         nextOverColumn.cardOrderIds = nextOverColumn.cards.map(
